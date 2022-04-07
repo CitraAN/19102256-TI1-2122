@@ -14,3 +14,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "LifeCycleApp"
 include ':app'
+include ':practice5'
+include ':practice6'
