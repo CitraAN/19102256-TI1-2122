@@ -12,7 +12,10 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/practice5" />
+<<<<<<< HEAD
             <option value="$PROJECT_DIR$/practice6" />
+=======
+>>>>>>> 6a6af77ad0c3b5cc611f1670f089243521531264
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

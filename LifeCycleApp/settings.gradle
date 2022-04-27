@@ -15,4 +15,7 @@ dependencyResolutionManagement {
 rootProject.name = "LifeCycleApp"
 include ':app'
 include ':practice5'
+<<<<<<< HEAD
 include ':practice6'
+=======
+>>>>>>> 6a6af77ad0c3b5cc611f1670f089243521531264
