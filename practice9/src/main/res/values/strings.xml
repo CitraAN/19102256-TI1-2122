@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Practice9</string>
+    <string name="name">Nama</string>
+    <string name="email">Email</string>
+    <string name="phone_number">No Telpon</string>
+    <string name="age">Umur</string>
+    <string name="dark_theme">Tema Gelap</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="save">Simpan</string>
+    <string name="setting">Setting</string>
+    <string name="tv_theme">Tema</string>
+    <string name="phone">No Telpon</string>
+    <string name="setting_page">Setting</string>
+    <string name="field_required">Kolom Tidak Boleh Kosong</string>
+    <string name="email_is_not_valid">Email Tidak Valid</string>
+    <string name="field_digit_only">Kolom Harus Angka</string>
+    <string name="main_title">Dashboard</string>
+    <string name="default_name">No Name</string>
+    <string name="default_phone">No Telpn</string>
+    <string name="default_age">No Age</string>
+    <string name="default_email">No Email</string>
+    <string name="light_theme">Tema Terang</string>
+</resources>
