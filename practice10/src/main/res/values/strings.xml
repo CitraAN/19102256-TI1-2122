@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Practice10</string>
+    <string name="delete">Delete</string>
+    <string name="title">Title</string>
+    <string name="category">Category</string>
+    <string name="description">Description</string>
+    <string name="date">Data</string>
+    <string name="submit">Submit</string>
+</resources>
