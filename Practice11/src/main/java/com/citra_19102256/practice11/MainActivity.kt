@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.core.view.isVisible
 import com.citra_19102256.practice11.databinding.ActivityMainBinding
@@ -17,19 +18,16 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
+    var rImage: ImageView? = null
     private lateinit var auth: FirebaseAuth
     private lateinit var binding: ActivityMainBinding
-    private lateinit var googleSignInClient: GoogleSignInClient
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         auth = Firebase.auth
-        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken(getString(R.string.default_web_client_id))
-            .requestEmail()
-            .build()
-        googleSignInClient = GoogleSignIn.getClient(this, gso)
+
         binding.btnSignOut.setOnClickListener(this)
         binding.btnEmailVerify.setOnClickListener(this)
 
@@ -40,7 +38,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             finish()
         }
     }
-
 
     public override fun onStart() {
         super.onStart()
@@ -53,8 +50,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         else{
             updateUI(currentUser)
         }
-    }
+        binding.btnSignOut.setOnClickListener(this)
+        binding.btnEmailVerify.setOnClickListener(this)
 
+    }
 
     override fun onClick(v: View) {
         when (v.id) {
@@ -66,6 +65,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
         }
     }
+
     private fun sendEmailVerification() {
         binding.btnEmailVerify.isEnabled = false
         val user = auth.currentUser!!
@@ -91,12 +91,21 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             startActivity(intent)
             finish()
         }
-        googleSignInClient.signOut().addOnCompleteListener(this) {
+    }
+
+
+    private fun dashboard(){
+        val currentUser = auth.currentUser
+        if (currentUser != null) {
+            val intent = Intent(this@MainActivity, DashboardQuoteActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
+
     private fun updateUI(currentUser: FirebaseUser) {
         binding.btnEmailVerify.isVisible = false
-        currentUser?.let {
+        currentUser.let {
             val name = currentUser.displayName
             val phoneNumber = currentUser.phoneNumber
             val email = currentUser.email

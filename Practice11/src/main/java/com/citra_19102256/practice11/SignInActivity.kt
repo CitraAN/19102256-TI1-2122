@@ -53,6 +53,16 @@ class SignInActivity : AppCompatActivity() , View.OnClickListener {
 
         }
     }
+
+    private fun phone(){
+        val currentUser = auth.currentUser
+        if (currentUser == null) {
+            val intent = Intent(this@SignInActivity, PhoneAuthActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+    }
+
     private fun signIn() {
         val signInIntent = googleSignInClient.signInIntent
         startActivityForResult(signInIntent, 9001)

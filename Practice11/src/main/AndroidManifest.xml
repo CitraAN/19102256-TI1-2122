@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Project11">
         <activity
+            android:name=".PhoneAuthActivity"
+            android:exported="false" />
+        <activity
+            android:name=".QuoteAddUpdateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DashboardQuoteActivity"
+            android:exported="false" />
+        <activity
             android:name=".SignUpActivity"
             android:exported="false" />
         <activity
@@ -17,12 +26,12 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
